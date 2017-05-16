@@ -1,0 +1,23 @@
+# Created by .ignore support plugin (hsz.mobi)
+/.idea/
+/mcdb-test.iml
+/front/front.iml
+/api/api.iml
+
+# See https://help.github.com/ignore-files/ for more about ignoring files.
+
+# dependencies
+/front/node_modules/
+
+# testing
+/coverage/
+
+# production
+/front/build/
+
+# misc
+/front/.DS_Store
+/front/.env
+/front/npm-debug.log*
+/front/yarn-debug.log*
+/front/yarn-error.log*
