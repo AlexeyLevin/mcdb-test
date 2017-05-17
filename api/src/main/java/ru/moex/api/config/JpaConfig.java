@@ -69,6 +69,29 @@ public class JpaConfig {
         return new HibernateJpaVendorAdapter();
     }
 
+
+    @Bean
+    public DataSource hsqlDbDataSource() {
+        final DriverManagerDataSource dataSource = new DriverManagerDataSource();
+//        dataSource.setDriverClassName(environment.getRequiredProperty("jdbc.driverClassName"));
+//        dataSource.setUrl(environment.getRequiredProperty("jdbc.url"));
+//        dataSource.setUsername(environment.getRequiredProperty("jdbc.username"));
+//        dataSource.setPassword(environment.getRequiredProperty("jdbc.password"));
+//        return dataSource;
+//        #database.url=jdbc:hsqldb:file:D:/temp/mcdb-test
+//    database.url=jdbc:hsqldb:mem:mcdb_inmemory_test
+//    database.username=sa
+//    database.password=
+//
+//    database.init=true
+//
+//    jdbc.initLocation=initDB_hsql.sql
+//    jpa.showSql=true
+//    hibernate.format_sql=true
+//    hibernate.use_sql_comments=true
+        return dataSource;
+    }
+
     @Bean
     public Properties hibernateProperties() {
         final Properties properties = new Properties();
