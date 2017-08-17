@@ -17,29 +17,34 @@ import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 import java.util.Properties;
 
+import static ru.moex.api.config.ApplicationContext.BASE_PACKAGE;
+
 @Configuration
 @EnableTransactionManagement
-@PropertySource(value = "classpath:hibernate.properties")
+@PropertySource("classpath:hibernate.properties")
 public class JpaConfig {
-    private Environment environment;
+    private final Environment environment;
 
-    public JpaConfig(Environment environment) {
+    public JpaConfig(final Environment environment) {
         this.environment = environment;
     }
 
     @Bean
-    public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
-        LocalContainerEntityManagerFactoryBean entityManagerFactory = new LocalContainerEntityManagerFactoryBean();
-        entityManagerFactory.setDataSource(dataSource());
-        entityManagerFactory.setJpaVendorAdapter(jpaVendorAdapter());
-        entityManagerFactory.setPackagesToScan("ru.micex.api");
-        entityManagerFactory.setJpaProperties(hibernateProperties());
+    public LocalContainerEntityManagerFactoryBean entityManagerFactory(
+            final DataSource dataSource,
+            final JpaVendorAdapter jpaVendorAdapter,
+            final Properties jpaProperties) {
+        final LocalContainerEntityManagerFactoryBean entityManagerFactory = new LocalContainerEntityManagerFactoryBean();
+        entityManagerFactory.setDataSource(dataSource);
+        entityManagerFactory.setJpaVendorAdapter(jpaVendorAdapter);
+        entityManagerFactory.setPackagesToScan(BASE_PACKAGE);
+        entityManagerFactory.setJpaProperties(jpaProperties);
         return entityManagerFactory;
     }
 
     @Bean
     public DataSource dataSource() {
-        DriverManagerDataSource dataSource = new DriverManagerDataSource();
+        final DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName(environment.getRequiredProperty("jdbc.driverClassName"));
         dataSource.setUrl(environment.getRequiredProperty("jdbc.url"));
         dataSource.setUsername(environment.getRequiredProperty("jdbc.username"));
@@ -48,8 +53,8 @@ public class JpaConfig {
     }
 
     @Bean
-    public PlatformTransactionManager transactionManager(EntityManagerFactory entityManagerFactory) {
-        JpaTransactionManager transactionManager = new JpaTransactionManager();
+    public PlatformTransactionManager transactionManager(final EntityManagerFactory entityManagerFactory) {
+        final JpaTransactionManager transactionManager = new JpaTransactionManager();
         transactionManager.setEntityManagerFactory(entityManagerFactory);
         return transactionManager;
     }
@@ -64,12 +69,36 @@ public class JpaConfig {
         return new HibernateJpaVendorAdapter();
     }
 
-    private Properties hibernateProperties() {
-        Properties properties = new Properties();
-        properties.put("hibernate.dialect", environment.getRequiredProperty("hibernate.dialect"));
-        properties.put("hibernate.show_sql", environment.getRequiredProperty("hibernate.show_sql"));
-        properties.put("hibernate.format_sql", environment.getRequiredProperty("hibernate.format_sql"));
-        properties.put("hibernate.hbm2ddl.auto", environment.getRequiredProperty("hibernate.hbm2ddl.auto"));
+
+    @Bean
+    public DataSource hsqlDbDataSource() {
+        final DriverManagerDataSource dataSource = new DriverManagerDataSource();
+//        dataSource.setDriverClassName(environment.getRequiredProperty("jdbc.driverClassName"));
+//        dataSource.setUrl(environment.getRequiredProperty("jdbc.url"));
+//        dataSource.setUsername(environment.getRequiredProperty("jdbc.username"));
+//        dataSource.setPassword(environment.getRequiredProperty("jdbc.password"));
+//        return dataSource;
+//        #database.url=jdbc:hsqldb:file:D:/temp/mcdb-test
+//    database.url=jdbc:hsqldb:mem:mcdb_inmemory_test
+//    database.username=sa
+//    database.password=
+//
+//    database.init=true
+//
+//    jdbc.initLocation=initDB_hsql.sql
+//    jpa.showSql=true
+//    hibernate.format_sql=true
+//    hibernate.use_sql_comments=true
+        return dataSource;
+    }
+
+    @Bean
+    public Properties hibernateProperties() {
+        final Properties properties = new Properties();
+        properties.setProperty("hibernate.dialect", environment.getRequiredProperty("hibernate.dialect"));
+        properties.setProperty("hibernate.show_sql", environment.getRequiredProperty("hibernate.show_sql"));
+        properties.setProperty("hibernate.format_sql", environment.getRequiredProperty("hibernate.format_sql"));
+        properties.setProperty("hibernate.hbm2ddl.auto", environment.getRequiredProperty("hibernate.hbm2ddl.auto"));
         return properties;
     }
 }
