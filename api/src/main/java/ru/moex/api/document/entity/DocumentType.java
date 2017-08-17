@@ -1,4 +1,4 @@
-package ru.moex.api.organization.entity;
+package ru.moex.api.document.entity;
 
 import lombok.Data;
 
@@ -11,13 +11,12 @@ import javax.persistence.Table;
 
 @Data
 @Entity
-@Table(name = "ORGANIZATION")
-public class Organization {
+@Table(name = "DOCUMENT_TYPES")
+public class DocumentType {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column(name = "SHORT_NAME")
-    private String shortName;
-
+    @Column(name = "NAME")
+    private String name;
 }

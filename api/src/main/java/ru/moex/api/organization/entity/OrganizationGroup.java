@@ -1,7 +1,10 @@
 package ru.moex.api.organization.entity;
 
+import lombok.Data;
+
 import javax.persistence.*;
 
+@Data
 @Entity
 @Table(name = "ORGANIZATION_GROUP")
 public class OrganizationGroup {
@@ -12,15 +15,4 @@ public class OrganizationGroup {
     @Column(name = "NAME")
     private String name;
 
-    public Long getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 }

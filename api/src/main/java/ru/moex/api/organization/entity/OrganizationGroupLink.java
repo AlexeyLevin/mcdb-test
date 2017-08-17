@@ -1,7 +1,16 @@
 package ru.moex.api.organization.entity;
 
-import javax.persistence.*;
+import lombok.Data;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+@Data
 @Entity
 @Table(name = "ORGANIZATION_GROUP_LINK")
 public class OrganizationGroupLink {
@@ -9,29 +18,12 @@ public class OrganizationGroupLink {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @ManyToOne
     @JoinColumn(name = "ORGANIZATION_ID")
     private Organization organization;
 
-    @JoinColumn(name = "ORGANIZATION_GROUP")
+    @ManyToOne
+    @JoinColumn(name = "ORGANIZATION_GROUP_ID")
     private OrganizationGroup organizationGroup;
 
-    public Long getId() {
-        return id;
-    }
-
-    public Organization getOrganization() {
-        return organization;
-    }
-
-    public void setOrganization(Organization organization) {
-        this.organization = organization;
-    }
-
-    public OrganizationGroup getOrganizationGroup() {
-        return organizationGroup;
-    }
-
-    public void setOrganizationGroup(OrganizationGroup organizationGroup) {
-        this.organizationGroup = organizationGroup;
-    }
 }
