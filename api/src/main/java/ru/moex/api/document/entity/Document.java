@@ -1,9 +1,10 @@
 package ru.moex.api.document.entity;
 
-import ru.moex.api.documentType.entity.DocumentType;
+import lombok.Data;
 
 import javax.persistence.*;
 
+@Data
 @Entity
 @Table(name = "DOCUMENT")
 public class Document {
@@ -11,18 +12,7 @@ public class Document {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "DOCUMENT_TYPE_ID")
     private DocumentType documentType;
-
-    public Long getId() {
-        return id;
-    }
-
-    public DocumentType getDocumentType() {
-        return documentType;
-    }
-
-    public void setDocumentType(DocumentType documentType) {
-        this.documentType = documentType;
-    }
 }

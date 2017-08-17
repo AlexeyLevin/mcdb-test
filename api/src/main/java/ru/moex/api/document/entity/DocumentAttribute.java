@@ -1,10 +1,18 @@
-package ru.moex.api.documentAttributes;
+package ru.moex.api.document.entity;
 
-import ru.moex.api.documentType.entity.DocumentType;
+import lombok.Data;
 import ru.moex.api.property.entity.Property;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
+@Data
 @Entity
 @Table(name = "DOCUMENT_ATTRIBUTE")
 public class DocumentAttribute {
@@ -12,10 +20,12 @@ public class DocumentAttribute {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @ManyToOne
     @JoinColumn(name = "DOCUMENT_TYPE_ID")
     private DocumentType documentType;
 
-    @JoinColumn(name = "PROPERTY")
+    @ManyToOne
+    @JoinColumn(name = "PROPERTY_ID")
     private Property property;
 
     @Column(name = "TITLE")
