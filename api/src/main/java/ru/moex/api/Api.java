@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
-@EntityScan(basePackages = "ru.moex.api.**.entity")
+@EntityScan(basePackages = "ru.moex.api.**.test")
 @EnableJpaRepositories(basePackages = "ru.moex.api.**.repository")
 public class Api {
     public static void main(String[] args) {

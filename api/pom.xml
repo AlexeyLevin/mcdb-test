@@ -49,7 +49,6 @@
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
-            <version>42.1.4</version>
         </dependency>
         <dependency>
             <groupId>ru.yandex.qatools.embed</groupId>
@@ -60,7 +59,6 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.16.10</version>
         </dependency>
     </dependencies>
     <build>
