@@ -32,8 +32,8 @@ class DataSourceConfig {
     @SneakyThrows
     public EmbeddedPostgres embeddedPostgres() {
         final EmbeddedPostgres postgres = new EmbeddedPostgres(V9_6);
-        File file = new File("C:\\Users\\LevinAY\\.embedpostgresql");
-        postgres.start(cachedRuntimeConfig(file.toPath()));
+//        File file = new File("C:\\Users\\LevinAY\\.embedpostgresql");
+        postgres.start(/*cachedRuntimeConfig(file.toPath())*/);
         final String url = postgres.start("localhost",
                 5432,
                 "postgres",

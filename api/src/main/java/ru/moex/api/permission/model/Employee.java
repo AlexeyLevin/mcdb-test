@@ -9,7 +9,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import java.sql.Time;
+import java.time.LocalDateTime;
 import java.util.Collection;
 
 @Data
@@ -33,7 +33,7 @@ public class Employee {
     @Basic@Column(name = "UPDATE_CLIENT_FILES", nullable = false, precision = 0)
     private boolean updateClientFiles;
     @Basic@Column(name = "LAST_UPDATE_DATE", nullable = true)
-    private Time lastUpdateDate;
+    private LocalDateTime lastUpdateDate;
     @Basic@Column(name = "LAST_UPDATE_ERROR", nullable = true, length = 4000)
     private String lastUpdateError;
     @Basic@Column(name = "POSITION", nullable = true, length = 500)
@@ -45,9 +45,9 @@ public class Employee {
     @Basic@Column(name = "FIRED", nullable = true, precision = 0)
     private Boolean fired;
     @Basic@Column(name = "LAST_EDIT_TIME", nullable = true)
-    private Time lastEditTime;
+    private LocalDateTime lastEditTime;
     @Basic@Column(name = "STORE_DATE", nullable = true)
-    private Time storeDate;
+    private LocalDateTime storeDate;
     @OneToMany(mappedBy = "employeeByEmployeeId")
     private Collection<Document> documentsByDocumentId;
 }

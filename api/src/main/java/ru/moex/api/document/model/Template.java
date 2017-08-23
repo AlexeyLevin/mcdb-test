@@ -6,7 +6,7 @@ import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import java.sql.Time;
+import java.time.LocalDateTime;
 
 @Data
 @Entity
@@ -18,8 +18,8 @@ public class Template {
     @Basic@Column(name = "DESCRIPTION", nullable = true, length = 250)
     private String description;
     @Basic@Column(name = "LAST_EDIT_TIME", nullable = true)
-    private Time lastEditTime;
+    private LocalDateTime lastEditTime;
     @Basic@Column(name = "STORE_DATE", nullable = true)
-    private Time storeDate;
+    private LocalDateTime storeDate;
 
 }

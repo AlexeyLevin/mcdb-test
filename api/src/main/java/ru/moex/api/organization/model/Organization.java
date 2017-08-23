@@ -9,7 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import java.sql.Time;
+import java.time.LocalDateTime;
 
 @Data
 @Entity
@@ -52,9 +52,9 @@ public class Organization {
     @Basic@Column(name = "OGRN", nullable = true, length = 50)
     private String ogrn;
     @Basic@Column(name = "REG_DATE", nullable = true)
-    private Time regDate;
+    private LocalDateTime regDate;
     @Basic@Column(name = "OGRN_DATE", nullable = true)
-    private Time ogrnDate;
+    private LocalDateTime ogrnDate;
     @Basic@Column(name = "KPP", nullable = true, length = 10)
     private String kpp;
     @Basic@Column(name = "KPP2", nullable = true, length = 10)
@@ -78,9 +78,9 @@ public class Organization {
     @Basic@Column(name = "UT_STOCK", nullable = true, precision = 0)
     private Long utStock;
     @Basic@Column(name = "DECLARATION_ACCEPT_DATE", nullable = true)
-    private Time declarationAcceptDate;
+    private LocalDateTime declarationAcceptDate;
     @Basic@Column(name = "STOCK_ADMIT_DATE", nullable = true)
-    private Time stockAdmitDate;
+    private LocalDateTime stockAdmitDate;
     @Basic@Column(name = "STOCK_ADMIT_PROT_NUMB", nullable = true, precision = 0)
     private Long stockAdmitProtNumb;
     @Basic@Column(name = "STOCK_UNIT_NAME", nullable = true, length = 500)
@@ -108,15 +108,15 @@ public class Organization {
     @Basic@Column(name = "SFR", nullable = true, precision = 0)
     private Long sfr;
     @Basic@Column(name = "SFR_ACCEPT_DATE", nullable = true)
-    private Time sfrAcceptDate;
+    private LocalDateTime sfrAcceptDate;
     @Basic@Column(name = "SFR_EXCLUDE_DATE", nullable = true)
-    private Time sfrExcludeDate;
+    private LocalDateTime sfrExcludeDate;
     @Basic@Column(name = "SFR_REJECT_INFO", nullable = true, length = 1000)
     private String sfrRejectInfo;
     @Basic@Column(name = "UT_STOCK_DERIVATIVE", nullable = true, precision = 0)
     private Long utStockDerivative;
     @Basic@Column(name = "STOCK_DER_ADMIT_DATE", nullable = true)
-    private Time stockDerAdmitDate;
+    private LocalDateTime stockDerAdmitDate;
     @Basic@Column(name = "STOCK_DER_ADMIT_PROT", nullable = true, precision = 0)
     private Long stockDerAdmitProt;
     @Basic@Column(name = "SSR", nullable = true, precision = 0)
@@ -128,15 +128,15 @@ public class Organization {
     @Basic@Column(name = "STOCK_DER_ADMIT_PAYMENT_SUM", nullable = true, precision = 0)
     private Double stockDerAdmitPaymentSum;
     @Basic@Column(name = "STOCK_DER_ADMIT_PAYMENT_DATE", nullable = true)
-    private Time stockDerAdmitPaymentDate;
+    private LocalDateTime stockDerAdmitPaymentDate;
     @Basic@Column(name = "STOCK_DER_AFTER_PAYMENT_SUM", nullable = true, precision = 0)
     private Double stockDerAfterPaymentSum;
     @Basic@Column(name = "STOCK_DER_AFTER_PAYMENT_DATE", nullable = true)
-    private Time stockDerAfterPaymentDate;
+    private LocalDateTime stockDerAfterPaymentDate;
     @Basic@Column(name = "REGISTRY_HOLDER_CONTRACT_NUM", nullable = true, length = 300)
     private String registryHolderContractNum;
     @Basic@Column(name = "REGISTRY_HOLDER_CONTRACT_DATE", nullable = true)
-    private Time registryHolderContractDate;
+    private LocalDateTime registryHolderContractDate;
     @Basic@Column(name = "REGISTRY_CERTIFICATE_NUMBER", nullable = true, length = 500)
     private String registryCertificateNumber;
     @Basic@Column(name = "VOTE_STOCK_PIE", nullable = true, precision = 0)
@@ -168,13 +168,13 @@ public class Organization {
     @Basic@Column(name = "LISTING_AGENT_DESCRIPTION", nullable = true, length = 4000)
     private String listingAgentDescription;
     @Basic@Column(name = "STOCK_TRADE_ADMIT_DATE", nullable = true)
-    private Time stockTradeAdmitDate;
+    private LocalDateTime stockTradeAdmitDate;
     @Basic@Column(name = "STOCK_DER_TRADE_ADMIT_DATE", nullable = true)
-    private Time stockDerTradeAdmitDate;
+    private LocalDateTime stockDerTradeAdmitDate;
     @Basic@Column(name = "STOCK_ADMIT_PAYMENT_SUM", nullable = true, precision = 0)
     private Double stockAdmitPaymentSum;
     @Basic@Column(name = "STOCK_ADMIT_PAYMENT_DATE", nullable = true)
-    private Time stockAdmitPaymentDate;
+    private LocalDateTime stockAdmitPaymentDate;
     @Basic@Column(name = "CEO_ID", nullable = true, precision = 0)
     private Long ceoId;
     @Basic@Column(name = "FIELDS", nullable = true, length = 4000)
@@ -190,31 +190,31 @@ public class Organization {
     @Basic@Column(name = "SE_ID", nullable = true, precision = 0)
     private Long seId;
     @Basic@Column(name = "CLEARING_RP_ACCOUNTS_OPEN_DATE", nullable = true)
-    private Time clearingRpAccountsOpenDate;
+    private LocalDateTime clearingRpAccountsOpenDate;
     @Basic@Column(name = "REPORTDB_ID", nullable = true, precision = 0)
     private Long reportdbId;
     @Basic@Column(name = "UT_COMMODITY", nullable = true, precision = 0)
     private Long utCommodity;
     @Basic@Column(name = "CURR_DER_TRADE_ADMIT_DATE", nullable = true)
-    private Time currDerTradeAdmitDate;
+    private LocalDateTime currDerTradeAdmitDate;
     @Basic@Column(name = "CURR_DER_ADMIT_PAYMENT_SUM", nullable = true, precision = 0)
     private Double currDerAdmitPaymentSum;
     @Basic@Column(name = "CURR_DER_ADMIT_PAYMENT_DATE", nullable = true)
-    private Time currDerAdmitPaymentDate;
+    private LocalDateTime currDerAdmitPaymentDate;
     @Basic@Column(name = "OSCAR_ID", nullable = true, precision = 0)
     private Long oscarId;
     @Basic@Column(name = "GOV_TRADE_ADMIT_DATE", nullable = true)
-    private Time govTradeAdmitDate;
+    private LocalDateTime govTradeAdmitDate;
     @Basic@Column(name = "BR_UNSEC_LOAN_TRADE_ADMIT_DATE", nullable = true)
-    private Time brUnsecLoanTradeAdmitDate;
+    private LocalDateTime brUnsecLoanTradeAdmitDate;
     @Basic@Column(name = "BR_DEPOSIT_TRADE_ADMIT_DATE", nullable = true)
-    private Time brDepositTradeAdmitDate;
+    private LocalDateTime brDepositTradeAdmitDate;
     @Basic@Column(name = "BR_CREDIT_TRADE_ACCEPT_DATE", nullable = true)
-    private Time brCreditTradeAcceptDate;
+    private LocalDateTime brCreditTradeAcceptDate;
     @Basic@Column(name = "BR_OFFEX_REPO_TRADE_ADMIT_DATE", nullable = true)
-    private Time brOffexRepoTradeAdmitDate;
+    private LocalDateTime brOffexRepoTradeAdmitDate;
     @Basic@Column(name = "VEB_DEPOSIT_TRADE_ADMIT_DATE", nullable = true)
-    private Time vebDepositTradeAdmitDate;
+    private LocalDateTime vebDepositTradeAdmitDate;
     @Basic@Column(name = "CURRENCY_MARKET_ACCEPT", nullable = true, precision = 0)
     private Boolean currencyMarketAccept;
     @Basic@Column(name = "GOV_OP_OWN_EXPENSE_ACCEPT", nullable = true, precision = 0)
@@ -250,9 +250,9 @@ public class Organization {
     @Basic@Column(name = "OON_REGISTRY_NUMBER", nullable = true, length = 10)
     private String oonRegistryNumber;
     @Basic@Column(name = "CB_REGISTRY_DATE", nullable = true)
-    private Time cbRegistryDate;
+    private LocalDateTime cbRegistryDate;
     @Basic@Column(name = "OON_REGISTRY_DATE", nullable = true)
-    private Time oonRegistryDate;
+    private LocalDateTime oonRegistryDate;
     @Basic@Column(name = "NATURAL_MONOPOLY", nullable = true, precision = 0)
     private Boolean naturalMonopoly;
     @Basic@Column(name = "STOCK_MARKET_INFO", nullable = true)
@@ -280,7 +280,7 @@ public class Organization {
     @Basic@Column(name = "SAVING_BONDS_MARKET_INFO", nullable = true)
     private String savingBondsMarketInfo;
     @Basic@Column(name = "UT_DOSSIER_DATE", nullable = true)
-    private Time utDossierDate;
+    private LocalDateTime utDossierDate;
     @Basic@Column(name = "TOP100_CURRENCY", nullable = true, precision = 0)
     private Boolean top100Currency;
     @Basic@Column(name = "REGISTRY_ORGAN", nullable = true, length = 500)
@@ -390,45 +390,45 @@ public class Organization {
     @Basic@Column(name = "LA_PUBLICATION_STATE", nullable = true, precision = 0)
     private Boolean laPublicationState;
     @Basic@Column(name = "LKU_ACCESS_DATE", nullable = true)
-    private Time lkuAccessDate;
+    private LocalDateTime lkuAccessDate;
     @Basic@Column(name = "LAST_EDIT_TIME", nullable = true)
-    private Time lastEditTime;
+    private LocalDateTime lastEditTime;
     @Basic@Column(name = "CC_NP_STATUS", nullable = true, precision = 0)
     private Boolean ccNpStatus;
     @Basic@Column(name = "CC_NP", nullable = true)
-    private Time ccNp;
+    private LocalDateTime ccNp;
     @Basic@Column(name = "FORTS_RF_STATUS", nullable = true, precision = 0)
     private Boolean fortsRfStatus;
     @Basic@Column(name = "FORTS_RF_DATE", nullable = true)
-    private Time fortsRfDate;
+    private LocalDateTime fortsRfDate;
     @Basic@Column(name = "FORTS_SETUP", nullable = true)
-    private Time fortsSetup;
+    private LocalDateTime fortsSetup;
     @Basic@Column(name = "FORTS_STOCK_DATE", nullable = true)
-    private Time fortsStockDate;
+    private LocalDateTime fortsStockDate;
     @Basic@Column(name = "FORTS_MONEY_DATE", nullable = true)
-    private Time fortsMoneyDate;
+    private LocalDateTime fortsMoneyDate;
     @Basic@Column(name = "FORTS_COM_DATE", nullable = true)
-    private Time fortsComDate;
+    private LocalDateTime fortsComDate;
     @Basic@Column(name = "OAO_DATE_NEW", nullable = true)
-    private Time oaoDateNew;
+    private LocalDateTime oaoDateNew;
     @Basic@Column(name = "CLASSIC_MARKET_DATE", nullable = true)
-    private Time classicMarketDate;
+    private LocalDateTime classicMarketDate;
     @Basic@Column(name = "RTS_STD_STATUS", nullable = true, precision = 0)
     private Boolean rtsStdStatus;
     @Basic@Column(name = "RTS_STD_DATE", nullable = true)
-    private Time rtsStdDate;
+    private LocalDateTime rtsStdDate;
     @Basic@Column(name = "MONEY_STATUS", nullable = true, precision = 0)
     private Boolean moneyStatus;
     @Basic@Column(name = "MONEY_SETUP", nullable = true)
-    private Time moneySetup;
+    private LocalDateTime moneySetup;
     @Basic@Column(name = "ASP_SIGN", nullable = true)
-    private Time aspSign;
+    private LocalDateTime aspSign;
     @Basic@Column(name = "ASP_SIGN_TC", nullable = true)
-    private Time aspSignTc;
+    private LocalDateTime aspSignTc;
     @Basic@Column(name = "NDOC", nullable = true, precision = 0)
     private Long ndoc;
     @Basic@Column(name = "RTS_SERT_DATE", nullable = true)
-    private Time rtsSertDate;
+    private LocalDateTime rtsSertDate;
     @Basic@Column(name = "CODE_RF", nullable = true, length = 10)
     private String codeRf;
     @Basic@Column(name = "CODE_RTS", nullable = true, length = 10)
@@ -440,25 +440,25 @@ public class Organization {
     @Basic@Column(name = "FORTS_STATUS_OLD", nullable = true, precision = 0)
     private Boolean fortsStatusOld;
     @Basic@Column(name = "FORTS_SETUP_OLD", nullable = true)
-    private Time fortsSetupOld;
+    private LocalDateTime fortsSetupOld;
     @Basic@Column(name = "FORTS_STOCK_STATUS_OLD", nullable = true, precision = 0)
     private Boolean fortsStockStatusOld;
     @Basic@Column(name = "FORTS_STOCK_DATE_OLD", nullable = true)
-    private Time fortsStockDateOld;
+    private LocalDateTime fortsStockDateOld;
     @Basic@Column(name = "FORTS_MONEY_STATUS_OLD", nullable = true, precision = 0)
     private Boolean fortsMoneyStatusOld;
     @Basic@Column(name = "FORTS_MONEY_DATE_OLD", nullable = true)
-    private Time fortsMoneyDateOld;
+    private LocalDateTime fortsMoneyDateOld;
     @Basic@Column(name = "FORTS_COM_STATUS_OLD", nullable = true, precision = 0)
     private Boolean fortsComStatusOld;
     @Basic@Column(name = "FORTS_COM_DATE_OLD", nullable = true)
-    private Time fortsComDateOld;
+    private LocalDateTime fortsComDateOld;
     @Basic@Column(name = "NO_FIVE_HOLDERS", nullable = true, precision = 0)
     private Boolean noFiveHolders;
     @Basic@Column(name = "STOCK_MAIN_NCC_CLEARING", nullable = true, precision = 0)
     private Boolean stockMainNccClearing;
     @Basic@Column(name = "FT_DEPOSIT_TRADE_ADMIT_DATE", nullable = true)
-    private Time ftDepositTradeAdmitDate;
+    private LocalDateTime ftDepositTradeAdmitDate;
     @Basic@Column(name = "FT_DEPOSIT_MARKET_ACCEPT", nullable = true, precision = 0)
     private Boolean ftDepositMarketAccept;
     @Basic@Column(name = "FT_DEPOSIT_MARKET_INFO", nullable = true)
@@ -496,13 +496,13 @@ public class Organization {
     @Basic@Column(name = "COMMODITY_ADMIT_PAYMENT_SUM", nullable = true, precision = 0)
     private Double commodityAdmitPaymentSum;
     @Basic@Column(name = "COMMODITY_ADMIT_PAYMENT_DATE", nullable = true)
-    private Time commodityAdmitPaymentDate;
+    private LocalDateTime commodityAdmitPaymentDate;
     @Basic@Column(name = "COMMODITY_CONTRACT_NUMBER", nullable = true, length = 20)
     private String commodityContractNumber;
     @Basic@Column(name = "COMMODITY_CONTRACT_DATE", nullable = true)
-    private Time commodityContractDate;
+    private LocalDateTime commodityContractDate;
     @Basic@Column(name = "COMMODITY_ACCESS_DATE", nullable = true)
-    private Time commodityAccessDate;
+    private LocalDateTime commodityAccessDate;
     @Basic@Column(name = "REGISTRY_DOC_SERIES", nullable = true, length = 2)
     private String registryDocSeries;
     @Basic@Column(name = "REGISTRY_DOC_NUMBER", nullable = true, length = 10)
@@ -546,7 +546,7 @@ public class Organization {
     @Basic@Column(name = "MMTB_STATUS", nullable = true, precision = 0)
     private Boolean mmtbStatus;
     @Basic@Column(name = "MMTB_DATE", nullable = true)
-    private Time mmtbDate;
+    private LocalDateTime mmtbDate;
     @Basic@Column(name = "FORTS_MARKET_INFO", nullable = true)
     private String fortsMarketInfo;
     @Basic@Column(name = "MMTB_CODE", nullable = true, length = 5)
@@ -614,17 +614,17 @@ public class Organization {
     @Basic@Column(name = "EDO_OTC_STATUS", nullable = true, precision = 0)
     private Boolean edoOtcStatus;
     @Basic@Column(name = "BANK_CLIENT_DATE", nullable = true)
-    private Time bankClientDate;
+    private LocalDateTime bankClientDate;
     @Basic@Column(name = "DKK_CLIENT_DATE", nullable = true)
-    private Time dkkClientDate;
+    private LocalDateTime dkkClientDate;
     @Basic@Column(name = "FILE_GATE_DATE", nullable = true)
-    private Time fileGateDate;
+    private LocalDateTime fileGateDate;
     @Basic@Column(name = "CED_DATE", nullable = true)
-    private Time cedDate;
+    private LocalDateTime cedDate;
     @Basic@Column(name = "RTS_GATE_DATE", nullable = true)
-    private Time rtsGateDate;
+    private LocalDateTime rtsGateDate;
     @Basic@Column(name = "FORTS_GATE_DATE", nullable = true)
-    private Time fortsGateDate;
+    private LocalDateTime fortsGateDate;
     @Basic@Column(name = "STOCK_ACCESS_PAYMENT_SUM", nullable = true, precision = 0)
     private Double stockAccessPaymentSum;
     @Basic@Column(name = "STOCK_ACCESS_PAYMENT_DATE", nullable = true, precision = 0)
@@ -710,7 +710,7 @@ public class Organization {
     @Basic@Column(name = "MEB_COMM_RESOURCE_HOLDER", nullable = true, precision = 0)
     private Boolean mebCommResourceHolder;
     @Basic@Column(name = "STORE_DATE", nullable = true)
-    private Time storeDate;
+    private LocalDateTime storeDate;
     @Basic@Column(name = "INN_NONRESIDENT", nullable = true, length = 40)
     private String innNonresident;
     @Basic@Column(name = "AUTO_PUBLISH_RNS", nullable = true, precision = 0)
@@ -900,7 +900,7 @@ public class Organization {
     @Basic@Column(name = "CROSS_TRADES_OTC", nullable = true, precision = 0)
     private Boolean crossTradesOtc;
     @Basic@Column(name = "IMPORT_DATE", nullable = true)
-    private Time importDate;
+    private LocalDateTime importDate;
     @Basic@Column(name = "BULLETIN_SHORT_NAME_RU", nullable = true, length = 600)
     private String bulletinShortNameRu;
     @Basic@Column(name = "BULLETIN_SHORT_NAME_EN", nullable = true, length = 600)
@@ -908,9 +908,9 @@ public class Organization {
     @Basic@Column(name = "CRM_GUID", nullable = true, length = 200)
     private String crmGuid;
     @Basic@Column(name = "CROP_ACCESS_MODE_DATE", nullable = true)
-    private Time cropAccessModeDate;
+    private LocalDateTime cropAccessModeDate;
     @Basic@Column(name = "CROP_NCC_ACCESS_MODE_DATE", nullable = true)
-    private Time cropNccAccessModeDate;
+    private LocalDateTime cropNccAccessModeDate;
     @Basic@Column(name = "CROP_MARKET_GUARANTEE_FUND", nullable = true, precision = 0)
     private Boolean cropMarketGuaranteeFund;
     @Basic@Column(name = "GUARANTEE_FUND_SIZE_CROP", nullable = true, precision = 0)
@@ -972,7 +972,7 @@ public class Organization {
     @Basic@Column(name = "CROP_MARKET_INFO", nullable = true)
     private String cropMarketInfo;
     @Basic@Column(name = "DEPOSIT_TRADE_ADMIT_DATE", nullable = true)
-    private Time depositTradeAdmitDate;
+    private LocalDateTime depositTradeAdmitDate;
     @Basic@Column(name = "IS_DEPOSIT_CLEARING", nullable = true, precision = 0)
     private Boolean isDepositClearing;
     @ManyToOne@JoinColumn(name = "STOCK_REGIONAL_ID", referencedColumnName = "ID")

@@ -1,10 +1,16 @@
 package ru.moex.api.document.model;
 
-import lombok.*;
+import lombok.Data;
 import ru.moex.api.permission.model.Employee;
 
-import javax.persistence.*;
-import java.sql.Time;
+import javax.persistence.Basic;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+import java.time.LocalDateTime;
 
 @Data
 @Entity
@@ -17,9 +23,9 @@ public class DocumentAttachment {
     @Basic@Column(name = "RTS_FILE_ID", nullable = true, precision = 0)
     private Long rtsFileId;
     @Basic@Column(name = "LAST_EDIT_TIME", nullable = true)
-    private Time lastEditTime;
+    private LocalDateTime lastEditTime;
     @Basic@Column(name = "STORE_DATE", nullable = true)
-    private Time storeDate;
+    private LocalDateTime storeDate;
 
     @ManyToOne@JoinColumn(name = "DOCUMENT_ID", referencedColumnName = "ID", nullable = false)
     private Document documentByDocumentId;

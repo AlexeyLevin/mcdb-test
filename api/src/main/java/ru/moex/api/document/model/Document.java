@@ -11,7 +11,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import java.sql.Time;
+import java.time.LocalDateTime;
 import java.util.Collection;
 
 @Data
@@ -21,9 +21,9 @@ public class Document {
     @Id@Column(name = "ID", nullable = false, precision = 0)
     private long id;
     @Basic@Column(name = "DATE_BEGIN", nullable = true)
-    private Time dateBegin;
+    private LocalDateTime dateBegin;
     @Basic@Column(name = "DATE_END", nullable = true)
-    private Time dateEnd;
+    private LocalDateTime dateEnd;
     @Basic@Column(name = "NUMBER_", nullable = true, length = 100)
     private String number;
     @Basic@Column(name = "COUNT", nullable = true, precision = 0)
@@ -31,15 +31,15 @@ public class Document {
     @Basic@Column(name = "NOTE", nullable = true, length = 1500)
     private String note;
     @Basic@Column(name = "DATE_GIVE", nullable = true)
-    private Time dateGive;
+    private LocalDateTime dateGive;
     @Basic@Column(name = "LOCATION", nullable = true, length = 150)
     private String location;
     @Basic@Column(name = "REGISTRATION", nullable = true)
-    private Time registration;
+    private LocalDateTime registration;
     @Basic@Column(name = "INTERNAL_NUMBER", nullable = true, precision = 0)
     private Long internalNumber;
     @Basic@Column(name = "INTERNAL_DATE", nullable = true)
-    private Time internalDate;
+    private LocalDateTime internalDate;
     @Basic@Column(name = "COST_SERVICE", nullable = true, precision = 0)
     private Double costService;
     @Basic@Column(name = "COST_EXAMINATION", nullable = true, precision = 0)
@@ -51,19 +51,19 @@ public class Document {
     @Basic@Column(name = "COST_SUPPORT_INTO_QUOTED_LIST", nullable = true, precision = 0)
     private Double costSupportIntoQuotedList;
     @Basic@Column(name = "DATE_SENDING_TO_ISSUER", nullable = true)
-    private Time dateSendingToIssuer;
+    private LocalDateTime dateSendingToIssuer;
     @Basic@Column(name = "DATE_PAYMENT", nullable = true)
-    private Time datePayment;
+    private LocalDateTime datePayment;
     @Basic@Column(name = "DATE_SERVICE", nullable = true)
-    private Time dateService;
+    private LocalDateTime dateService;
     @Basic@Column(name = "FIO", nullable = true, length = 500)
     private String fio;
     @Basic@Column(name = "INCOMING_DATE", nullable = true)
-    private Time incomingDate;
+    private LocalDateTime incomingDate;
     @Basic@Column(name = "INCOMING_NUMBER", nullable = true, length = 300)
     private String incomingNumber;
     @Basic@Column(name = "DATE_DECISION", nullable = true)
-    private Time dateDecision;
+    private LocalDateTime dateDecision;
     @Basic@Column(name = "SHORT_CONTENT_DECISION", nullable = true, length = 250)
     private String shortContentDecision;
     @Basic@Column(name = "INITIATOR_SUBJECT", nullable = true, length = 250)
@@ -77,9 +77,9 @@ public class Document {
     @Basic@Column(name = "SN_ELECTRONIC_KEY", nullable = true, length = 4000)
     private String snElectronicKey;
     @Basic@Column(name = "ADMIT_DATE", nullable = true)
-    private Time admitDate;
+    private LocalDateTime admitDate;
     @Basic@Column(name = "STORE_DATE", nullable = false)
-    private Time storeDate;
+    private LocalDateTime storeDate;
     @Basic@Column(name = "E_SIGN_OWNER", nullable = true, length = 500)
     private String eSignOwner;
     @Basic@Column(name = "ACTUAL", nullable = true, precision = 0)
@@ -99,15 +99,15 @@ public class Document {
     @Basic@Column(name = "SIGNER1_FIO", nullable = true, length = 250)
     private String signer1Fio;
     @Basic@Column(name = "SIGNER1_BEGIN_DATE", nullable = true)
-    private Time signer1BeginDate;
+    private LocalDateTime signer1BeginDate;
     @Basic@Column(name = "SIGNER1_END_DATE", nullable = true)
-    private Time signer1EndDate;
+    private LocalDateTime signer1EndDate;
     @Basic@Column(name = "SIGNER2_FIO", nullable = true, length = 250)
     private String signer2Fio;
     @Basic@Column(name = "SIGNER2_BEGIN_DATE", nullable = true)
-    private Time signer2BeginDate;
+    private LocalDateTime signer2BeginDate;
     @Basic@Column(name = "SIGNER2_END_DATE", nullable = true)
-    private Time signer2EndDate;
+    private LocalDateTime signer2EndDate;
     @Basic@Column(name = "WORK_SITE_SMA", nullable = true, precision = 0)
     private Boolean workSiteSma;
     @Basic@Column(name = "WORK_SITE_I_STOCK", nullable = true, precision = 0)
@@ -141,9 +141,9 @@ public class Document {
     @Basic@Column(name = "TO_DEL", nullable = true, precision = 0)
     private Long toDel;
     @Basic@Column(name = "DATE_GIVE_PAPER", nullable = true)
-    private Time dateGivePaper;
+    private LocalDateTime dateGivePaper;
     @Basic@Column(name = "EVENT_DATE", nullable = true)
-    private Time eventDate;
+    private LocalDateTime eventDate;
     @Basic@Column(name = "DOCUMENT_NAME", nullable = true, length = 500)
     private String documentName;
     @Basic@Column(name = "NOTE_JD", nullable = true, length = 4000)
@@ -177,7 +177,7 @@ public class Document {
     @Basic@Column(name = "PLACEMENT_VOLUME", nullable = true, precision = 0)
     private Double placementVolume;
     @Basic@Column(name = "REVOCATION_DATE", nullable = true)
-    private Time revocationDate;
+    private LocalDateTime revocationDate;
     @Basic@Column(name = "IS_ON_CURRENCY_MRKT", nullable = true, precision = 0)
     private Boolean isOnCurrencyMrkt;
     @Basic@Column(name = "IS_ON_STOCK_MRKT", nullable = true, precision = 0)
@@ -199,7 +199,7 @@ public class Document {
     @Basic@Column(name = "PLACEMENT_ADMIT_DATE", nullable = true, length = 150)
     private String placementAdmitDate;
     @Basic@Column(name = "LAST_EDIT_TIME", nullable = true)
-    private Time lastEditTime;
+    private LocalDateTime lastEditTime;
     @Basic@Column(name = "RTS_DOCUMENT_ID", nullable = true, precision = 0)
     private Long rtsDocumentId;
     @Basic@Column(name = "RTS_NOTE", nullable = true)
@@ -225,7 +225,7 @@ public class Document {
     @Basic@Column(name = "IS_ON_COMMODITY_MRKT", nullable = true, precision = 0)
     private Boolean isOnCommodityMrkt;
     @Basic@Column(name = "DATETIME_BEGIN", nullable = true)
-    private Time datetimeBegin;
+    private LocalDateTime datetimeBegin;
     @Basic@Column(name = "ORG_STOPPING_ADM_CAUSE_FORTS", nullable = true, precision = 0)
     private Long orgStoppingAdmCauseForts;
     @Basic@Column(name = "READY_FOR_PUBLICATION", nullable = true, precision = 0)
@@ -243,7 +243,7 @@ public class Document {
     @Basic@Column(name = "SCOPE_NCC", nullable = true, precision = 0)
     private Boolean scopeNcc;
     @Basic@Column(name = "SKRIN_RECEIPT_DATE", nullable = true)
-    private Time skrinReceiptDate;
+    private LocalDateTime skrinReceiptDate;
     @Basic@Column(name = "SCOPE_EDO_NSD", nullable = true, precision = 0)
     private Boolean scopeEdoNsd;
     @Basic@Column(name = "IS_OPEN_ENDED", nullable = true, precision = 0)
@@ -345,7 +345,7 @@ public class Document {
     @Basic@Column(name = "IS_ON_AO", nullable = true, precision = 0)
     private Boolean isOnAo;
     @Basic@Column(name = "DATE_OF_DISCLOSURE", nullable = true)
-    private Time dateOfDisclosure;
+    private LocalDateTime dateOfDisclosure;
     @Basic@Column(name = "IS_ON_RO", nullable = true, precision = 0)
     private Boolean isOnRo;
     @Basic@Column(name = "CANCEL_RSTR_ON_SETTLEMENT_CODE", nullable = true, precision = 0)
@@ -393,13 +393,13 @@ public class Document {
     @Basic@Column(name = "ACTIVITY_U", nullable = true, precision = 0)
     private Boolean activityU;
     @Basic@Column(name = "ATT_DATE", nullable = true)
-    private Time attDate;
+    private LocalDateTime attDate;
     @Basic@Column(name = "ATT_NUMBER", nullable = true, length = 50)
     private String attNumber;
     @Basic@Column(name = "CANCEL_DATE", nullable = true)
-    private Time cancelDate;
+    private LocalDateTime cancelDate;
     @Basic@Column(name = "EKZ_DATE", nullable = true)
-    private Time ekzDate;
+    private LocalDateTime ekzDate;
     @Basic@Column(name = "EKZ_NUMBER", nullable = true, length = 50)
     private String ekzNumber;
     @Basic@Column(name = "QUALIFICATION_K", nullable = true, precision = 0)
@@ -447,7 +447,7 @@ public class Document {
     @Basic@Column(name = "RAILWAY_STATION", nullable = true)
     private String railwayStation;
     @Basic@Column(name = "DATE_SECURITY_CHECK", nullable = true)
-    private Time dateSecurityCheck;
+    private LocalDateTime dateSecurityCheck;
     @Basic@Column(name = "IS_SECURITY_CONCLUSION", nullable = true, precision = 0)
     private Boolean isSecurityConclusion;
     @Basic@Column(name = "OT_NUMBER", nullable = true, length = 1000)

@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import java.sql.Time;
+import java.time.LocalDateTime;
 
 @Data
 @Entity
@@ -22,6 +23,6 @@ public class Logins {
     @Basic@Column(name = "AD_LOGIN", nullable = true, length = 100)
     private String adLogin;
     @Basic@Column(name = "LAST_LOGON", nullable = true)
-    private Time lastLogon;
+    private LocalDateTime lastLogon;
 
 }

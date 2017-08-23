@@ -3,7 +3,7 @@ package ru.moex.api.organization.model;
 import lombok.Data;
 
 import javax.persistence.*;
-import java.sql.Time;
+import java.time.LocalDateTime;
 
 @Data
 @Entity
@@ -26,15 +26,15 @@ public class Agent {
     @Basic@Column(name = "STOCK_LEARN_COMMENT", nullable = true, length = 500)
     private String stockLearnComment;
     @Basic@Column(name = "DATE_OPENED", nullable = true)
-    private Time dateOpened;
+    private LocalDateTime dateOpened;
     @Basic@Column(name = "FINAL_DATE", nullable = true)
-    private Time finalDate;
+    private LocalDateTime finalDate;
     @Basic@Column(name = "CURR_DER_DATE_ACCREDITATION", nullable = true)
-    private Time currDerDateAccreditation;
+    private LocalDateTime currDerDateAccreditation;
     @Basic@Column(name = "CURR_DER_DATE_ACCESS", nullable = true)
-    private Time currDerDateAccess;
+    private LocalDateTime currDerDateAccess;
     @Basic@Column(name = "PERMISSION_FINAL_DATE", nullable = true)
-    private Time permissionFinalDate;
+    private LocalDateTime permissionFinalDate;
     @Basic@Column(name = "CLOSED", nullable = true, precision = 0)
     private Boolean closed;
     @Basic@Column(name = "INTERNET_TRADER", nullable = true, precision = 0)
@@ -56,7 +56,7 @@ public class Agent {
     @Basic@Column(name = "IS_CLEARING_IDENTIFIER", nullable = true, precision = 0)
     private Boolean isClearingIdentifier;
     @Basic@Column(name = "PFD_BEFORE_NAMELESS_ID", nullable = true)
-    private Time pfdBeforeNamelessId;
+    private LocalDateTime pfdBeforeNamelessId;
     @Basic@Column(name = "HAS_PERM_BEFORE_NAMELESS_ID", nullable = true, precision = 0)
     private Boolean hasPermBeforeNamelessId;
     @Basic@Column(name = "SERIAL_OVER_VPTS_CONN_TYPE", nullable = true, precision = 0)
@@ -66,9 +66,9 @@ public class Agent {
     @Basic@Column(name = "EMPLOYEE_ID", nullable = true, precision = 0)
     private Long employeeId;
     @Basic@Column(name = "STORE_DATE", nullable = true)
-    private Time storeDate;
+    private LocalDateTime storeDate;
     @Basic@Column(name = "LAST_EDIT_TIME", nullable = true)
-    private Time lastEditTime;
+    private LocalDateTime lastEditTime;
     @Basic@Column(name = "SERIAL_OVER_AGENT_TYPE", nullable = true, precision = 0)
     private Long serialOverAgentType;
     @Basic@Column(name = "NO_OFFSYSTEM_TRADE_INSTRUMENT", nullable = true, length = 4000)
