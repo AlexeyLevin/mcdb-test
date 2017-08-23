@@ -1,7 +1,7 @@
 package ru.moex.api.organization.service;
 
 import org.springframework.stereotype.Service;
-import ru.moex.api.organization.entity.Organization;
+import ru.moex.api.organization.model.Organization;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;

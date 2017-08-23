@@ -1,6 +1,6 @@
 package ru.moex.api.organization.service;
 
-import ru.moex.api.organization.entity.Organization;
+import ru.moex.api.organization.model.Organization;
 
 import java.util.List;
 

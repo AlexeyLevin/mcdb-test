@@ -2,8 +2,16 @@ package ru.moex.api.organization.controller;
 
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
-import ru.moex.api.organization.entity.Organization;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+import ru.moex.api.organization.model.Organization;
 import ru.moex.api.organization.service.OrganizationService;
 
 import java.util.List;
@@ -69,7 +77,7 @@ public class OrganizationRestController {
     }
 
     @GetMapping(value = "/{id}", produces = APPLICATION_JSON_UTF8_VALUE)
-    public ResponseEntity<Organization> findById(@PathVariable("id") Long id) {
+    public ResponseEntity<Organization> findById(@PathVariable("id") final long id) {
         return ResponseEntity.ok(organizationService.findById(id));
     }
 }
