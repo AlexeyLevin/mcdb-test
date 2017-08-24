@@ -14,7 +14,7 @@ import java.time.LocalDateTime;
 
 @Data
 @Entity
-@Table(name = "DOCUMENT_ATTACHMENT")
+@Table
 public class DocumentAttachment {
     @Id@Column(name = "ID", nullable = false, precision = 0)
     private long id;

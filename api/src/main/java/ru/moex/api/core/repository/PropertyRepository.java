@@ -7,7 +7,7 @@ import ru.moex.api.core.model.Property;
 
 import java.util.List;
 
-@RepositoryRestResource(collectionResourceRel = "properties", path = "properties")
+@RepositoryRestResource(collectionResourceRel = "properties", path = "propert")
 public interface PropertyRepository extends JpaRepository<Property, Long> {
 
     List<Property> findByName(@Param("name") String name);

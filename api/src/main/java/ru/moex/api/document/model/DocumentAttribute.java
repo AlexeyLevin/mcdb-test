@@ -1,5 +1,6 @@
 package ru.moex.api.document.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 import ru.moex.api.core.model.Property;
 
@@ -11,9 +12,12 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import static com.fasterxml.jackson.annotation.JsonFormat.Shape.STRING;
+
 @Data
 @Entity
 @Table(name = "DOCUMENT_ATTRIBUTE")
+//@JsonFormat(shape = STRING ,pattern = "dd-MM-YYYY hh:mm:ss" , timezone="GMT")
 public class DocumentAttribute {
     @Id@Column(name = "ID", nullable = false, precision = 0)
     private long id;
