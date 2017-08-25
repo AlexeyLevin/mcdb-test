@@ -1,21 +1,17 @@
 package ru.moex.api.core.model;
 
 import lombok.Data;
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
 import ru.moex.api.document.model.DocumentAttribute;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Collection;
+import java.util.Set;
 
 @Data
 @Entity
-@Table(name = "PROPERTY")
+@Table
 public class Property {
     @Id@Column(name = "ID", nullable = false, precision = 0)
     private long id;
@@ -39,10 +35,10 @@ public class Property {
     private String oldName;
     @Basic@Column(name = "USING_VIEW", nullable = true, precision = 0)
     private Boolean usingView;
-    @ManyToOne@JoinColumn(name = "REFERENCE_PROPERTY", referencedColumnName = "ID")
+    @ManyToOne(fetch=FetchType.EAGER)@JoinColumn(name = "REFERENCE_PROPERTY", referencedColumnName = "ID")
     private Property propertyByReferenceProperty;
-    @OneToMany(mappedBy = "propertyByProperty")
+    @OneToMany(mappedBy = "propertyByProperty", fetch=FetchType.EAGER)
     private Collection<DocumentAttribute> documentAttributesById;
-    @ManyToOne@JoinColumn(name = "OBJECT_TYPE", referencedColumnName = "ID", nullable = false)
-    private ObjectType objectTypeByObjectType;
+    @ManyToMany(fetch=FetchType.EAGER)@JoinColumn(name = "OBJECT_TYPE", referencedColumnName = "ID", nullable = false)
+    private Collection<ObjectType> objectTypeByObjectType;
 }

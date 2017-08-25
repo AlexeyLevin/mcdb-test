@@ -6,7 +6,7 @@ import javax.persistence.*;
 
 @Data
 @Entity
-@Table(name = "MARKET")
+@Table
 public class Market {
     @Id@Column(name = "ID", nullable = false, precision = 0)
     private long id;

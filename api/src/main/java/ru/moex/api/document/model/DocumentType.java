@@ -1,13 +1,19 @@
 package ru.moex.api.document.model;
 
-import lombok.*;
+import lombok.Data;
 
-import javax.persistence.*;
+import javax.persistence.Basic;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 import java.util.Collection;
 
 @Data
 @Entity
-@Table(name = "DOCUMENT_TYPE")
+@Table
 public class DocumentType {
     @Id@Column(name = "ID", nullable = false, precision = 0)
     private long id;
@@ -25,7 +31,7 @@ public class DocumentType {
     private Boolean presence;
     @Basic@Column(name = "PM_PROCCESS_TIME", nullable = true, precision = 0)
     private Long pmProccessTime;
-    @OneToMany(mappedBy = "documentTypeByDocumentType")
+    @OneToMany(mappedBy = "documentTypeByDocumentType", fetch=FetchType.EAGER)
     private Collection<Document> documentsById;
 
 }

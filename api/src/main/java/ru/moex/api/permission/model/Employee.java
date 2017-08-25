@@ -3,12 +3,7 @@ package ru.moex.api.permission.model;
 import lombok.Data;
 import ru.moex.api.document.model.Document;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.Collection;
 
@@ -48,6 +43,6 @@ public class Employee {
     private LocalDateTime lastEditTime;
     @Basic@Column(name = "STORE_DATE", nullable = true)
     private LocalDateTime storeDate;
-    @OneToMany(mappedBy = "employeeByEmployeeId")
+    @OneToMany(mappedBy = "employeeByEmployeeId",fetch= FetchType.EAGER)
     private Collection<Document> documentsByDocumentId;
 }

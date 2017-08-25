@@ -5,19 +5,12 @@ import lombok.Data;
 import ru.moex.api.document.model.Document;
 import ru.moex.api.permission.model.Employee;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
-@JsonFormat()
 @Data
 @Entity
-@Table(name = "PROPERTY_CHANGE")
+@Table
 public class PropertyChange {
     @Id@Column(name = "ID", nullable = false, precision = 0)
     private long id;
@@ -69,13 +62,13 @@ public class PropertyChange {
     private Boolean extraBoolValue2;
     @Basic@Column(name = "LAST_EDIT_TIME", nullable = true)
     private LocalDateTime lastEditTime;
-    @ManyToOne@JoinColumn(name = "OBJECT_TYPE", referencedColumnName = "ID", nullable = false)
+    @ManyToOne(fetch= FetchType.EAGER)@JoinColumn(name = "OBJECT_TYPE", referencedColumnName = "ID", nullable = false)
     private ObjectType objectTypeByObjectType;
-    @ManyToOne@JoinColumn(name = "PROPERTY_ID", referencedColumnName = "ID", nullable = false)
+    @ManyToOne(fetch=FetchType.EAGER)@JoinColumn(name = "PROPERTY_ID", referencedColumnName = "ID", nullable = false)
     private Property propertyByPropertyId;
-    @ManyToOne@JoinColumn(name = "DOCUMENT_ID", referencedColumnName = "ID")
+    @ManyToOne(fetch=FetchType.EAGER)@JoinColumn(name = "DOCUMENT_ID", referencedColumnName = "ID")
     private Document documentByDocumentId;
-    @ManyToOne@JoinColumn(name = "EMPLOYEE_ID", referencedColumnName = "ID", nullable = false)
+    @ManyToOne(fetch=FetchType.EAGER)@JoinColumn(name = "EMPLOYEE_ID", referencedColumnName = "ID", nullable = false)
     private Employee employeeByEmployeeId;
 
 }

@@ -2,18 +2,12 @@ package ru.moex.api.organization.model;
 
 import lombok.Data;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Data
 @Entity
-@Table(name = "ORGANIZATION")
+@Table
 public class Organization {
     @Id@Column(name = "ID", nullable = false, precision = 0)
     private long id;
@@ -975,12 +969,12 @@ public class Organization {
     private LocalDateTime depositTradeAdmitDate;
     @Basic@Column(name = "IS_DEPOSIT_CLEARING", nullable = true, precision = 0)
     private Boolean isDepositClearing;
-    @ManyToOne@JoinColumn(name = "STOCK_REGIONAL_ID", referencedColumnName = "ID")
+    @ManyToOne(fetch=FetchType.EAGER)@JoinColumn(name = "STOCK_REGIONAL_ID", referencedColumnName = "ID")
     private Organization organizationByStockRegionalId;
-    @ManyToOne@JoinColumn(name = "CLEARING_MEMBER_ID", referencedColumnName = "ID")
+    @ManyToOne(fetch= FetchType.EAGER)@JoinColumn(name = "CLEARING_MEMBER_ID", referencedColumnName = "ID")
     private Organization organizationByClearingMemberId;
-    @ManyToOne@JoinColumn(name = "STOCK_DER_REGIONAL_ID", referencedColumnName = "ID")
+    @ManyToOne(fetch=FetchType.EAGER)@JoinColumn(name = "STOCK_DER_REGIONAL_ID", referencedColumnName = "ID")
     private Organization organizationByStockDerRegionalId;
-    @ManyToOne@JoinColumn(name = "REGISTRY_HOLDER_ID", referencedColumnName = "ID")
+    @ManyToOne(fetch=FetchType.EAGER)@JoinColumn(name = "REGISTRY_HOLDER_ID", referencedColumnName = "ID")
     private Organization organizationByRegistryHolderId;
 }

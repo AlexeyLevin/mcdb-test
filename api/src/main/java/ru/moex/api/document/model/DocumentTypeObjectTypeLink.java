@@ -4,17 +4,11 @@ import lombok.Data;
 import ru.moex.api.core.model.ObjectType;
 import ru.moex.api.core.model.Property;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Data
 @Entity
-@Table(name = "DOCUMENT_TYPE_OBJECT_TYPE_LINK")
+@Table
 public class DocumentTypeObjectTypeLink {
     @Id@Column(name = "ID", nullable = false, precision = 0)
     private long id;
@@ -32,11 +26,11 @@ public class DocumentTypeObjectTypeLink {
     private Long orderState;
     @Basic@Column(name = "ACTUAL", nullable = true, precision = 0)
     private Boolean actual;
-    @ManyToOne@JoinColumn(name = "DOCUMENT_TYPE", referencedColumnName = "ID", nullable = false)
+    @ManyToOne(fetch=FetchType.EAGER)@JoinColumn(name = "DOCUMENT_TYPE", referencedColumnName = "ID", nullable = false)
     private DocumentType documentTypeByDocumentType;
-    @ManyToOne@JoinColumn(name = "OBJECT_DISPLAY", referencedColumnName = "ID", nullable = false)
+    @ManyToOne(fetch= FetchType.EAGER)@JoinColumn(name = "OBJECT_DISPLAY", referencedColumnName = "ID", nullable = false)
     private Property propertyByObjectDisplay;
-    @ManyToOne@JoinColumn(name = "OBJECT_TYPE", referencedColumnName = "ID", nullable = false)
+    @ManyToOne(fetch=FetchType.EAGER)@JoinColumn(name = "OBJECT_TYPE", referencedColumnName = "ID", nullable = false)
     private ObjectType objectTypeByObjectType;
 
 }

@@ -17,9 +17,9 @@ public class ObjectPermission {
     private String permission;
     @Basic@Column(name = "PERMISSION_OLD", nullable = true, length = 500)
     private String permissionOld;
-    @ManyToOne@JoinColumn(name = "OBJECT_TYPE", referencedColumnName = "ID")
+    @ManyToOne(fetch=FetchType.EAGER)@JoinColumn(name = "OBJECT_TYPE", referencedColumnName = "ID")
     private ObjectType objectTypeByObjectType;
-    @ManyToOne@JoinColumn(name = "OBJECT_ACTION", referencedColumnName = "ID", nullable = false)
+    @ManyToOne(fetch=FetchType.EAGER)@JoinColumn(name = "OBJECT_ACTION", referencedColumnName = "ID", nullable = false)
     private ObjectAction objectActionByObjectAction;
 
 }

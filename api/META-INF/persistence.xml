@@ -1,4 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
-
+    <!--<persistence-unit name="MCDB">-->
+        <!--<class>ru.moex.api.document.model.DocumentObjectLink</class>-->
+        <!--<class>ru.moex.api.document.model.DocumentAttachment</class>-->
+        <!--<class>ru.moex.api.document.model.DocumentAttribute</class>-->
+        <!--<class>ru.moex.api.document.model.Template</class>-->
+        <!--<class>ru.moex.api.document.model.Document</class>-->
+        <!--<class>ru.moex.api.document.model.DocumentGroup</class>-->
+        <!--<class>ru.moex.api.document.model.DocumentType</class>-->
+        <!--<class>ru.moex.api.document.model.DocumentTypeGroupLink</class>-->
+        <!--<class>ru.moex.api.document.model.DocumentTypeObjectTypeLink</class>-->
+        <!--<properties>-->
+            <!--<property name="hibernate.connection.url" value="jdbc:oracle:thin:@//10.50.125.208:1521/icdb5"/>-->
+            <!--<property name="hibernate.connection.driver_class" value="oracle.jdbc.OracleDriver"/>-->
+        <!--</properties>-->
+    <!--</persistence-unit>-->
 </persistence>

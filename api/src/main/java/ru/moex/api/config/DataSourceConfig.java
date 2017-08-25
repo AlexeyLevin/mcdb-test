@@ -1,14 +1,11 @@
 package ru.moex.api.config;
 
-import de.flapdoodle.embed.process.config.IRuntimeConfig;
 import lombok.SneakyThrows;
-import org.apache.tomcat.jdbc.pool.PoolProperties;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.*;
 import org.springframework.core.env.Environment;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import ru.yandex.qatools.embed.postgresql.EmbeddedPostgres;
-import ru.yandex.qatools.embed.postgresql.config.RuntimeConfigBuilder;
 
 import javax.sql.DataSource;
 

@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
 
 @Data
 @Entity
-@Table(name = "AGENT")
+@Table
 public class Agent {
     @Id@Column(name = "ID", nullable = false, precision = 0)
     private long id;
@@ -115,15 +115,15 @@ public class Agent {
     private String telNo2;
     @Basic@Column(name = "IS_ELEVATOR_AGENT", nullable = true, precision = 0)
     private Boolean isElevatorAgent;
-    @ManyToOne@JoinColumn(name = "MARKET", referencedColumnName = "ID", nullable = false)
+    @ManyToOne(fetch=FetchType.EAGER)@JoinColumn(name = "MARKET", referencedColumnName = "ID", nullable = false)
     private Market marketByMarket;
-    @ManyToOne@JoinColumn(name = "PARENT_AGENT_ID", referencedColumnName = "ID")
+    @ManyToOne(fetch=FetchType.EAGER)@JoinColumn(name = "PARENT_AGENT_ID", referencedColumnName = "ID")
     private Agent agentByParentAgentId;
-    @ManyToOne@JoinColumn(name = "AGENT_TYPE", referencedColumnName = "ID")
+    @ManyToOne(fetch=FetchType.EAGER)@JoinColumn(name = "AGENT_TYPE", referencedColumnName = "ID")
     private AgentType agentTypeByAgentType;
-    @ManyToOne@JoinColumn(name = "MASTER_ID1", referencedColumnName = "ID")
+    @ManyToOne(fetch=FetchType.EAGER)@JoinColumn(name = "MASTER_ID1", referencedColumnName = "ID")
     private Agent agentByMasterId1;
-    @ManyToOne@JoinColumn(name = "MASTER_ID2", referencedColumnName = "ID")
+    @ManyToOne(fetch=FetchType.EAGER)@JoinColumn(name = "MASTER_ID2", referencedColumnName = "ID")
     private Agent agentByMasterId2;
 
 }

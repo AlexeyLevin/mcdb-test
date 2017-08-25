@@ -6,6 +6,7 @@ import ru.moex.api.permission.model.Employee;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -13,10 +14,11 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import java.time.LocalDateTime;
 import java.util.Collection;
+import java.util.Set;
 
 @Data
 @Entity
-@Table(name = "DOCUMENT")
+@Table
 public class Document {
     @Id@Column(name = "ID", nullable = false, precision = 0)
     private long id;
@@ -472,12 +474,12 @@ public class Document {
     private Boolean isOnFtdm;
     @Basic@Column(name = "IS_ON_DEPOSIT_MRKT", nullable = true, precision = 0)
     private Boolean isOnDepositMrkt;
-    @ManyToOne@JoinColumn(name = "DOCUMENT_TYPE", referencedColumnName = "ID", nullable = false)
+    @ManyToOne(fetch=FetchType.EAGER)@JoinColumn(name = "DOCUMENT_TYPE", referencedColumnName = "ID", nullable = false)
     private DocumentType documentTypeByDocumentType;
-    @ManyToOne@JoinColumn(name = "EMPLOYEE_ID", referencedColumnName = "ID", nullable = false)
+    @ManyToOne(fetch=FetchType.EAGER)@JoinColumn(name = "EMPLOYEE_ID", referencedColumnName = "ID", nullable = false)
     private Employee employeeByEmployeeId;
-    @OneToMany(mappedBy = "documentByDocumentId")
-    private Collection<DocumentAttachment> documentAttachmentsById;
-    @OneToMany(mappedBy = "documentByDocumentId")
+    @OneToMany(mappedBy = "documentByDocumentId", fetch=FetchType.EAGER)
+    private Set<DocumentAttachment> documentAttachmentsById;
+    @OneToMany(mappedBy = "documentByDocumentId", fetch=FetchType.EAGER)
     private Collection<DocumentObjectLink> documentObjectLinksById;
 }

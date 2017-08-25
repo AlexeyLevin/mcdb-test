@@ -4,13 +4,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 import ru.moex.api.core.model.Property;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 import static com.fasterxml.jackson.annotation.JsonFormat.Shape.STRING;
 
@@ -35,10 +29,9 @@ public class DocumentAttribute {
     private boolean visible;
     @Basic@Column(name = "OBJECT_REQUEST", nullable = true)
     private String objectRequest;
-
-    @ManyToOne@JoinColumn(name = "DOCUMENT_TYPE", referencedColumnName = "ID", nullable = false)
+    @ManyToOne(fetch= FetchType.EAGER)@JoinColumn(name = "DOCUMENT_TYPE", referencedColumnName = "ID", nullable = false)
     private DocumentType documentTypeByDocumentType;
-    @ManyToOne@JoinColumn(name = "PROPERTY", referencedColumnName = "ID", nullable = false)
+    @ManyToOne(fetch=FetchType.EAGER)@JoinColumn(name = "PROPERTY", referencedColumnName = "ID", nullable = false)
     private Property propertyByProperty;
 
 }

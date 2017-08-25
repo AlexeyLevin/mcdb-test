@@ -10,7 +10,7 @@ import javax.persistence.Table;
 
 @Data
 @Entity
-@Table(name = "ORGANIZATION_TYPE")
+@Table
 public class OrganizationType {
     @Id
     @Column(name = "ID", nullable = false, precision = 0)

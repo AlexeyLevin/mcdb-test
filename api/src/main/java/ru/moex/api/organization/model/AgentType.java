@@ -10,7 +10,7 @@ import javax.persistence.Table;
 
 @Data
 @Entity
-@Table(name = "AGENT_TYPE")
+@Table
 public class AgentType {
     @Id@Column(name = "ID", nullable = false, precision = 0)
     private long id;
