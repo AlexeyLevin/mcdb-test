@@ -20,10 +20,9 @@ public class DocumentAttachment {
     private LocalDateTime lastEditTime;
     @Basic@Column(name = "STORE_DATE", nullable = true)
     private LocalDateTime storeDate;
-
     @ManyToOne(fetch= FetchType.EAGER)@JoinColumn(name = "DOCUMENT_ID", referencedColumnName = "ID", nullable = false)
-    private Document documentByDocumentId;
+    private Document document;
     @ManyToOne(fetch=FetchType.EAGER)@JoinColumn(name = "EMPLOYEE_ID", referencedColumnName = "ID")
-    private Employee employeeByEmployeeId;
+    private Employee employee;
 
 }

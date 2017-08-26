@@ -36,9 +36,9 @@ public class Property {
     @Basic@Column(name = "USING_VIEW", nullable = true, precision = 0)
     private Boolean usingView;
     @ManyToOne(fetch=FetchType.EAGER)@JoinColumn(name = "REFERENCE_PROPERTY", referencedColumnName = "ID")
-    private Property propertyByReferenceProperty;
-    @OneToMany(mappedBy = "propertyByProperty", fetch=FetchType.EAGER)
-    private Collection<DocumentAttribute> documentAttributesById;
+    private Property referenceProperty;
+    @OneToMany(mappedBy = "property", fetch=FetchType.EAGER)
+    private Collection<DocumentAttribute> documentAttributes;
     @ManyToMany(fetch=FetchType.EAGER)@JoinColumn(name = "OBJECT_TYPE", referencedColumnName = "ID", nullable = false)
-    private Collection<ObjectType> objectTypeByObjectType;
+    private Collection<ObjectType> objectType;
 }

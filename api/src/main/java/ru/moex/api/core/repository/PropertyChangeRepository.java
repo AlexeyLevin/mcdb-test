@@ -10,5 +10,5 @@ import java.util.List;
 @RepositoryRestResource(collectionResourceRel = "property_changes", path = "property_changes")
 public interface PropertyChangeRepository extends JpaRepository<PropertyChange, Long> {
 
-    List<PropertyChange> findByDocumentByDocumentId(@Param("documentId")long id);
+    List<PropertyChange> findByDocumentId(@Param("documentId")long id);
 }

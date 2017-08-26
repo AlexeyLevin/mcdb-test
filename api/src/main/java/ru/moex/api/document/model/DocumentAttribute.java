@@ -30,8 +30,8 @@ public class DocumentAttribute {
     @Basic@Column(name = "OBJECT_REQUEST", nullable = true)
     private String objectRequest;
     @ManyToOne(fetch= FetchType.EAGER)@JoinColumn(name = "DOCUMENT_TYPE", referencedColumnName = "ID", nullable = false)
-    private DocumentType documentTypeByDocumentType;
+    private DocumentType documentType;
     @ManyToOne(fetch=FetchType.EAGER)@JoinColumn(name = "PROPERTY", referencedColumnName = "ID", nullable = false)
-    private Property propertyByProperty;
+    private Property property;
 
 }

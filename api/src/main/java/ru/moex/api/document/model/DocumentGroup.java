@@ -20,12 +20,12 @@ public class DocumentGroup {
     @Basic@Column(name = "ORDER_STATE", nullable = true, precision = 0)
     private Long orderState;
     @ManyToOne(fetch=FetchType.EAGER)@JoinColumn(name = "PARENT_GROUP", referencedColumnName = "ID")
-    private DocumentGroup documentGroupByParentGroup;
+    private DocumentGroup parentGroup;
     @ManyToOne(fetch=FetchType.EAGER)@JoinColumn(name = "OBJECT_TYPE_TREE_OF_ROOT", referencedColumnName = "ID")
-    private ObjectType objectTypeByObjectTypeTreeOfRoot;
-    @OneToMany(mappedBy = "documentGroupByParentGroup", fetch= FetchType.EAGER)
-    private Collection<DocumentGroup> documentGroupsById;
-    @OneToMany(mappedBy = "documentGroupByDocumentGroup", fetch=FetchType.EAGER)
-    private Collection<DocumentTypeGroupLink> documentTypeGroupLinksById;
+    private ObjectType objectTypeTreeOfRoot;
+    @OneToMany(mappedBy = "parentGroup", fetch= FetchType.EAGER)
+    private Collection<DocumentGroup> documentGroups;
+    @OneToMany(mappedBy = "documentGroup", fetch=FetchType.EAGER)
+    private Collection<DocumentTypeGroupLink> documentTypeGroupLinks;
 
 }

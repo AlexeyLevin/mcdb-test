@@ -11,6 +11,6 @@ import java.util.List;
 @RepositoryRestResource(collectionResourceRel = "documents", path = "documents")
 public interface DocumentRepository extends JpaRepository<Document, Long> {
 
-    List<Document> findByDocumentTypeByDocumentTypeName(@Param("name") String name);
+    List<Document> findByDocumentTypeName(@Param("name") String name);
 
 }

@@ -476,11 +476,11 @@ public class Document {
     @Basic@Column(name = "IS_ON_DEPOSIT_MRKT", nullable = true, precision = 0)
     private Boolean isOnDepositMrkt;
     @ManyToOne(fetch=FetchType.EAGER)@JoinColumn(name = "DOCUMENT_TYPE", referencedColumnName = "ID", nullable = false)
-    private DocumentType documentTypeByDocumentType;
+    private DocumentType documentType;
     @ManyToOne(fetch=FetchType.EAGER)@JoinColumn(name = "EMPLOYEE_ID", referencedColumnName = "ID", nullable = false)
-    private Employee employeeByEmployeeId;
-    @OneToMany(mappedBy = "documentByDocumentId", fetch=FetchType.EAGER)
-    private Set<DocumentAttachment> documentAttachmentsById;
-    @OneToMany(mappedBy = "documentByDocumentId", fetch=FetchType.EAGER)
-    private Collection<DocumentObjectLink> documentObjectLinksById;
+    private Employee employee;
+    @OneToMany(mappedBy = "document", fetch=FetchType.EAGER)
+    private Set<DocumentAttachment> documentAttachments;
+    @OneToMany(mappedBy = "document", fetch=FetchType.EAGER)
+    private Collection<DocumentObjectLink> documentObjectLinks;
 }

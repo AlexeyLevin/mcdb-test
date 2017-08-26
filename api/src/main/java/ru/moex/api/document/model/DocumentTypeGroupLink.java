@@ -15,6 +15,6 @@ public class DocumentTypeGroupLink {
     @ManyToOne(fetch=FetchType.EAGER)@JoinColumn(name = "DOCUMENT_TYPE", referencedColumnName = "ID", nullable = false)
     private DocumentType documentTypeByDocumentType;
     @ManyToOne(fetch=FetchType.EAGER)@JoinColumn(name = "DOCUMENT_GROUP", referencedColumnName = "ID", nullable = false)
-    private DocumentGroup documentGroupByDocumentGroup;
+    private DocumentGroup documentGroup;
 
 }

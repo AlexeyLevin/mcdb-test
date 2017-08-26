@@ -27,10 +27,10 @@ public class DocumentTypeObjectTypeLink {
     @Basic@Column(name = "ACTUAL", nullable = true, precision = 0)
     private Boolean actual;
     @ManyToOne(fetch=FetchType.EAGER)@JoinColumn(name = "DOCUMENT_TYPE", referencedColumnName = "ID", nullable = false)
-    private DocumentType documentTypeByDocumentType;
+    private DocumentType documentType;
     @ManyToOne(fetch= FetchType.EAGER)@JoinColumn(name = "OBJECT_DISPLAY", referencedColumnName = "ID", nullable = false)
-    private Property propertyByObjectDisplay;
+    private Property objectDisplay;
     @ManyToOne(fetch=FetchType.EAGER)@JoinColumn(name = "OBJECT_TYPE", referencedColumnName = "ID", nullable = false)
-    private ObjectType objectTypeByObjectType;
+    private ObjectType objectType;
 
 }

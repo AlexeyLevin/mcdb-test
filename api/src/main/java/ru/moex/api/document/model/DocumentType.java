@@ -31,7 +31,7 @@ public class DocumentType {
     private Boolean presence;
     @Basic@Column(name = "PM_PROCCESS_TIME", nullable = true, precision = 0)
     private Long pmProccessTime;
-    @OneToMany(mappedBy = "documentTypeByDocumentType", fetch=FetchType.EAGER)
-    private Collection<Document> documentsById;
+    @OneToMany(mappedBy = "documentType", fetch=FetchType.EAGER)
+    private Collection<Document> documents;
 
 }

@@ -63,12 +63,12 @@ public class PropertyChange {
     @Basic@Column(name = "LAST_EDIT_TIME", nullable = true)
     private LocalDateTime lastEditTime;
     @ManyToOne(fetch= FetchType.EAGER)@JoinColumn(name = "OBJECT_TYPE", referencedColumnName = "ID", nullable = false)
-    private ObjectType objectTypeByObjectType;
+    private ObjectType objectType;
     @ManyToOne(fetch=FetchType.EAGER)@JoinColumn(name = "PROPERTY_ID", referencedColumnName = "ID", nullable = false)
-    private Property propertyByPropertyId;
+    private Property property;
     @ManyToOne(fetch=FetchType.EAGER)@JoinColumn(name = "DOCUMENT_ID", referencedColumnName = "ID")
-    private Document documentByDocumentId;
+    private Document document;
     @ManyToOne(fetch=FetchType.EAGER)@JoinColumn(name = "EMPLOYEE_ID", referencedColumnName = "ID", nullable = false)
-    private Employee employeeByEmployeeId;
+    private Employee employee;
 
 }

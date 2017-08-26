@@ -43,6 +43,6 @@ public class Employee {
     private LocalDateTime lastEditTime;
     @Basic@Column(name = "STORE_DATE", nullable = true)
     private LocalDateTime storeDate;
-    @OneToMany(mappedBy = "employeeByEmployeeId",fetch= FetchType.EAGER)
-    private Collection<Document> documentsByDocumentId;
+    @OneToMany(mappedBy = "employee",fetch= FetchType.EAGER)
+    private Collection<Document> documents;
 }

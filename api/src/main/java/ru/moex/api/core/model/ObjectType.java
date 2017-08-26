@@ -25,14 +25,14 @@ public class ObjectType {
     private String note;
     @Basic@Column(name = "OLD_NAME", nullable = false, length = 100)
     private String oldName;
-    @OneToMany(mappedBy = "objectTypeByObjectTypeTreeOfRoot", fetch=FetchType.EAGER)
+    @OneToMany(mappedBy = "objectTypeTreeOfRoot", fetch=FetchType.EAGER)
     private Set<DocumentGroup> documentGroupsById;
-    @OneToMany(mappedBy = "objectTypeByObjectType", fetch=FetchType.EAGER)
+    @OneToMany(mappedBy = "objectType", fetch=FetchType.EAGER)
     private Collection<DocumentObjectLink> documentObjectLinksById;
-    @OneToMany(mappedBy = "objectTypeByObjectType", fetch=FetchType.EAGER)
+    @OneToMany(mappedBy = "objectType", fetch=FetchType.EAGER)
     private Set<DocumentTypeObjectTypeLink> documentTypeObjectTypeLinksById;
-    @ManyToMany(mappedBy = "objectTypeByObjectType", fetch=FetchType.EAGER)
-    private Collection<Property> propertiesById;
-    @OneToMany(mappedBy = "objectTypeByObjectType", fetch=FetchType.EAGER)
-    private Collection<PropertyChange> propertyChangesById;
+    @ManyToMany(mappedBy = "objectType", fetch=FetchType.EAGER)
+    private Collection<Property> properties;
+    @OneToMany(mappedBy = "objectType", fetch=FetchType.EAGER)
+    private Collection<PropertyChange> propertyChanges;
 }
