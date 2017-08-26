@@ -12,6 +12,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Collection;
 import java.util.Set;
@@ -53,19 +54,19 @@ public class Document {
     @Basic@Column(name = "COST_SUPPORT_INTO_QUOTED_LIST", nullable = true, precision = 0)
     private Double costSupportIntoQuotedList;
     @Basic@Column(name = "DATE_SENDING_TO_ISSUER", nullable = true)
-    private LocalDateTime dateSendingToIssuer;
+    private LocalDate dateSendingToIssuer;
     @Basic@Column(name = "DATE_PAYMENT", nullable = true)
-    private LocalDateTime datePayment;
+    private LocalDate datePayment;
     @Basic@Column(name = "DATE_SERVICE", nullable = true)
     private LocalDateTime dateService;
     @Basic@Column(name = "FIO", nullable = true, length = 500)
     private String fio;
     @Basic@Column(name = "INCOMING_DATE", nullable = true)
-    private LocalDateTime incomingDate;
+    private LocalDate incomingDate;
     @Basic@Column(name = "INCOMING_NUMBER", nullable = true, length = 300)
     private String incomingNumber;
     @Basic@Column(name = "DATE_DECISION", nullable = true)
-    private LocalDateTime dateDecision;
+    private LocalDate dateDecision;
     @Basic@Column(name = "SHORT_CONTENT_DECISION", nullable = true, length = 250)
     private String shortContentDecision;
     @Basic@Column(name = "INITIATOR_SUBJECT", nullable = true, length = 250)
@@ -79,9 +80,9 @@ public class Document {
     @Basic@Column(name = "SN_ELECTRONIC_KEY", nullable = true, length = 4000)
     private String snElectronicKey;
     @Basic@Column(name = "ADMIT_DATE", nullable = true)
-    private LocalDateTime admitDate;
+    private LocalDate admitDate;
     @Basic@Column(name = "STORE_DATE", nullable = false)
-    private LocalDateTime storeDate;
+    private LocalDate storeDate;
     @Basic@Column(name = "E_SIGN_OWNER", nullable = true, length = 500)
     private String eSignOwner;
     @Basic@Column(name = "ACTUAL", nullable = true, precision = 0)

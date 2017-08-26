@@ -8,6 +8,10 @@ nuances:
 
 1. Embedded postgres - configure distributive and cache it at runtime:
  https://github.com/yandex-qatools/postgresql-embedded
+ manual start:
+ - Extract $HOME\.embedpostgresql\postgresql-9.4.1-1-windows-x64-binaries.zip to some directory, say Desktop\postgres
+ - Run Desktop\postgres\bin\initdb any/path/where/db/files/should/reside
+ - Run Desktop\bin\postgres(or pg_ctl) -D any/path/where/db/files/should/reside
 2. Spring Data Rest Repositories:
 https://itnext.io/building-microservices-with-spring-data-rest-40bb94080a9e
 3. Check out api documentation and examples: 
@@ -15,4 +19,4 @@ http://localhost:8080/swagger-ui.html
 4. Use default credentials for service 
  username: user
  password: see pass in output and logging at startup, always random password   
-
+5. Halbrowser - http://localhost:8080/api/browser/index.html#/api
