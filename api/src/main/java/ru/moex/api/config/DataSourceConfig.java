@@ -16,8 +16,8 @@ import static org.springframework.beans.factory.config.BeanDefinition.SCOPE_SING
 import static ru.yandex.qatools.embed.postgresql.EmbeddedPostgres.cachedRuntimeConfig;
 import static ru.yandex.qatools.embed.postgresql.distribution.Version.Main.V9_6;
 
-@Configuration
-@PropertySource("classpath:hibernate.properties")
+//@Configuration
+//@PropertySource("classpath:hibernate.properties")
 class DataSourceConfig {
 
     protected static final String HOST = "localhost";
