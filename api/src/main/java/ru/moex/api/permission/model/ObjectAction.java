@@ -6,7 +6,7 @@ import javax.persistence.*;
 
 @Data
 @Entity
-@Table(name = "OBJECT_ACTION"/*, schema = "ICDB", catalog = ""*/)
+@Table
 public class ObjectAction {
     @Id@Column(name = "ID", nullable = false, precision = 0)
     private long id;

@@ -9,7 +9,7 @@ import java.util.Collection;
 
 @Data
 @Entity
-@Table(name = "EMPLOYEE")
+@Table
 public class Employee {
     @Id@Column(name = "ID", nullable = false, precision = 0)
     private long id;

@@ -7,7 +7,7 @@ import javax.persistence.*;
 
 @Data
 @Entity
-@Table(name = "OBJECT_PERMISSION"/*, schema = "ICDB", catalog = ""*/)
+@Table
 public class ObjectPermission {
     @Id@GeneratedValue
     private Long id;
@@ -18,8 +18,8 @@ public class ObjectPermission {
     @Basic@Column(name = "PERMISSION_OLD", nullable = true, length = 500)
     private String permissionOld;
     @ManyToOne(fetch=FetchType.EAGER)@JoinColumn(name = "OBJECT_TYPE", referencedColumnName = "ID")
-    private ObjectType objectTypeByObjectType;
+    private ObjectType objectType;
     @ManyToOne(fetch=FetchType.EAGER)@JoinColumn(name = "OBJECT_ACTION", referencedColumnName = "ID", nullable = false)
-    private ObjectAction objectActionByObjectAction;
+    private ObjectAction objectAction;
 
 }

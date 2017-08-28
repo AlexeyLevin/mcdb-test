@@ -10,7 +10,7 @@ import javax.persistence.Table;
 
 @Data
 @Entity
-@Table(name = "ROLES")
+@Table
 public class Roles {
     @Id
     private long id;

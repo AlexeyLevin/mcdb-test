@@ -17,7 +17,7 @@ import java.util.Set;
 public class ObjectType {
     @Id@Column(name = "ID", nullable = false, precision = 0)
     private long id;
-    @Basic@Column(name = "NAME", nullable = true, length = 500)
+    @Basic@Column(name = "NAME", nullable = true, length = 500, unique = true)
     private String name;
     @Basic@Column(name = "DESCRIPTION", nullable = true, length = 500)
     private String description;

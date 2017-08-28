@@ -19,4 +19,4 @@ http://localhost:8080/swagger-ui.html
 4. Use default credentials for service 
  username: user
  password: see pass in output and logging at startup, always random password   
-5. Halbrowser - http://localhost:8080/api/browser/index.html#/api
+5. Hal-browser - http://localhost:8080/api/browser/index.html#/api

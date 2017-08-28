@@ -7,7 +7,7 @@ import javax.persistence.*;
 
 @Data
 @Entity
-@Table(name = "PROPERTY_PERMISSION"/*, schema = "ICDB", catalog = ""*/)
+@Table
 public class PropertyPermission {
     @Id
     private long id;
@@ -18,8 +18,8 @@ public class PropertyPermission {
     @Basic@Column(name = "PERMISSION_OLD", nullable = true, length = 500)
     private String permissionOld;
     @ManyToOne(fetch= FetchType.EAGER)@JoinColumn(name = "PROPERTY_ID", referencedColumnName = "ID")
-    private Property propertyByPropertyId;
+    private Property property;
     @ManyToOne(fetch=FetchType.EAGER)@JoinColumn(name = "PROPERTY_ACTION", referencedColumnName = "ID", nullable = false)
-    private PropertyAction propertyActionByPropertyAction;
+    private PropertyAction propertyAction;
 
 }
